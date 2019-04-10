@@ -14,7 +14,7 @@
 
 ## 实现
 
-![UML](../../resource/SimpleFactory/SimpleFactory.md)
+![UML](/resource/SimpleFactory/SimpleFactory.md)
 
 ## 扩展
 
