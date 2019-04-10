@@ -29,3 +29,32 @@
 
 + 类的个数过多，增加复杂度
 + 增加了系统的抽象性和理解难度
+
+## 在源码中的体现
+
++ JDK中Collection中有`Iterator<E> iterator`接口方法,Collection接口相当于工厂的抽象定义，而每个Collection实现类都有对应该方法的实现类，相当于具体的工厂，而这些工厂类生产的商品都实现了`Iterator`的接口，相当与这个例子实例当中的Video接口
+
++ JDK中的接口`URLStreamHandlerFactory`
+```java
+public interface URLStreamHandlerFactory {
+    URLStreamHandler createURLStreamHandler(String protocol);
+}
+private static class Factory implements URLStreamHandlerFactory {
+    private static String PREFIX = "sun.net.www.protocol";
+
+    private Factory() {
+    }
+
+    public URLStreamHandler createURLStreamHandler(String var1) {
+        String var2 = PREFIX + "." + var1 + ".Handler";
+
+        try {
+            //使用反射创建
+            Class var3 = Class.forName(var2);
+            return (URLStreamHandler)var3.newInstance();
+        } catch (ReflectiveOperationException var4) {
+            throw new InternalError("could not load " + var1 + "system protocol handler", var4);
+        }
+    }
+}
+```
