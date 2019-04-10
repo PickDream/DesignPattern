@@ -14,7 +14,7 @@
 
 ## 实现
 
-![UML](/resource/SimpleFactory/SimpleFactory.md)
+![UML](./1.png)
 
 ## 扩展
 
