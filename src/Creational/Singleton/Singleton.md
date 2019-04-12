@@ -119,6 +119,7 @@ public class LazyDoubleCheckSingleton {
 1. 不允许重排序
 2. 不允许其他线程看到重排序
 
+
 ## 总结
 
 
