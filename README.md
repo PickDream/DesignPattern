@@ -12,7 +12,7 @@
 
 + [建造者模式(Builder)](/src/Creational/Builder/builder.md)
 
-+ [单例模式(Singleton)]()
++ [单例模式(Singleton)](/src/Creational/Singleton/Singleton.md)
 
 + [原型模式(Prototype)]()
 
