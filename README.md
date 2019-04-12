@@ -10,6 +10,12 @@
 
 + [抽象工厂(AbstractFactory)](/src/Creational/AbstractFactory/AbstractFactory.md)
 
++ [建造者模式(Builder)](/src/Creational/Builder/builder.md)
+
++ [单例模式(Singleton)]()
+
++ [原型模式(Prototype)]()
+
 ## 结构型设计模式
 
 + [外观模式/门面模式(Facade)](/src/Structural/Facade/facade.md)

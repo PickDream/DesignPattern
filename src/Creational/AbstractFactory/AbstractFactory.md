@@ -31,7 +31,7 @@
 ![UML](1.png)
 
 ## 在源码中的体现
-+ Java中SQL包中的Connection类中可以通过`createStatement()`创建一个`Statement`，创建`PreparedStatement`这个Connection类对象相当于一个抽象工厂的接口定义，而接口`Statement`和`PreparedStatement`
++ Java中SQL包中的Connection类中可以通过`createStatement()`创建一个`Statement`，或者创建`PreparedStatement`这个Connection类对象相当于一个抽象工厂的接口定义，而接口`Statement`和`PreparedStatement`相当于一个工厂所生产的不同类型，而MySQL驱动所产生的Connection这个抽象工厂可以生产一系列的同一“产品族”的商品。
 ```java
 public interface Connection  extends Wrapper, AutoCloseable {
 
@@ -45,6 +45,7 @@ public interface Connection  extends Wrapper, AutoCloseable {
     CallableStatement prepareCall(String sql) throws SQLException;
     //...
 }
+
 public interface Statement extends Wrapper, AutoCloseable{
     //....
 }
