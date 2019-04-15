@@ -297,6 +297,10 @@ public class ThreadLocalInstance {
 ```
 `ThreadLocal`在多线程并发中颇有空间换时间的意思
 ## 在源码中的例子
++ JDK中`Runtime`类，属于饿汉式
++ Spring中是容器单例
++ MyBatis中的`ErrorContext`基于ThreadLocal但线程单例
+
 
 
 

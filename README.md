@@ -1,6 +1,6 @@
 # DesignPattern
 
- 设计模式概念的整理
+ 设计模式概念的整理与总结。
  
 ## 创造型设计模式
 
@@ -14,9 +14,11 @@
 
 + [单例模式(Singleton)](/src/Creational/Singleton/Singleton.md)
 
-+ [原型模式(Prototype)]()
++ [原型模式(Prototype)](/src/Creational/Prototype/Prototype.md)
+
 
 ## 结构型设计模式
 
 + [外观模式/门面模式(Facade)](/src/Structural/Facade/facade.md)
 
++ [装饰者模式]()

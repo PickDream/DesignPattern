@@ -187,12 +187,124 @@ public class HungrySingleton {
 ## 其他单例模式
 
 ### 枚举单例（Effective Java 推荐）
+```java
+public enum  EnumInstance {
+
+    INSTANCE;
+
+    private Object data;
+
+    public Object getData(){
+        return data;
+    }
+    public void setData(Object in){
+        data = in;
+    }
+
+    public static EnumInstance getInstance(){
+        return INSTANCE;
+    }
+
+}
+```
+Enum是怎么解决序列化以及反射攻击的？
++ 首先在`ObjectInputStream`在`readObject`中创建对象的过程中进行了判断，保证了不会创建新的对象，而且不能通过反射创建枚举类，但是为什么其能够保证线程安全呢？我们通过JAD反编译工具查看
+```java
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+// Source File Name:   EnumInstance.java
+
+package Creational.Singleton.EnumInstance;
+
+//首先是一个final类
+public final class EnumInstance extends Enum
+{
+    //利用静态块在类加载时创建
+    public static EnumInstance[] values()
+    {
+        return (EnumInstance[])$VALUES.clone();
+    }
+
+    public static EnumInstance valueOf(String name)
+    {
+        return (EnumInstance)Enum.valueOf(Creational/Singleton/EnumInstance/EnumInstance, name);
+    }
+    //构造器私有
+    private EnumInstance(String s, int i)
+    {
+        super(s, i);
+    }
+
+    public Object getData()
+    {
+        return data;
+    }
+
+    public static EnumInstance getInstance()
+    {
+        return INSTANCE;
+    }
+    //单例对象是static的
+    public static final EnumInstance INSTANCE;
+    private Object data;
+    private static final EnumInstance $VALUES[];
+
+    static 
+    {
+        INSTANCE = new EnumInstance("INSTANCE", 0);
+        $VALUES = (new EnumInstance[] {
+            INSTANCE
+        });
+    }
+}
+```
 
 ### 容器单例
-
+构造一个Map容器存放
+```java
+public class ContainerSingleton {
+    private static Map<String,Object> singletonMap = new ConcurrentHashMap<>();
+    public static void putInstance(String key,Object instance){
+        //简单的判断
+        if (key!=null&&instance!=null){
+            if (!singletonMap.containsKey(key)){
+                singletonMap.put(key,instance);
+            }
+        }
+    }
+    public static Object getInstance(String key){
+        return singletonMap.get(key);
+    }
+}
+```
+`HashTable`虽然是线程安全，但是对容器的性能影响很大
 ### ThreadLocal单例
+```java
+public class ThreadLocalInstance {
+    private static final ThreadLocal<ThreadLocalInstance> threadLocalInstance
+                = new ThreadLocal<ThreadLocalInstance>(){
+        @Override
+        protected ThreadLocalInstance initialValue(){
+            return new ThreadLocalInstance();
+        }
+    };
 
-## 总结
+    private static ThreadLocalInstance getInstance(){
+        return threadLocalInstance.get();
+    }
+}
+```
+`ThreadLocal`在多线程并发中颇有空间换时间的意思
+## 在源码中的例子
++ JDK中`Runtime`类，属于饿汉式
++ Spring中是容器单例
++ MyBatis中的`ErrorContext`基于ThreadLocal但线程单例
+
+
+
+
+
 
 
 
