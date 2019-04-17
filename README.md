@@ -21,4 +21,8 @@
 
 + [外观模式/门面模式(Facade)](/src/Structural/Facade/facade.md)
 
-+ [装饰者模式](/src/Structural/Decorate/Decorater.md)
++ [装饰者模式](/src/Structural/Decorator/Decorater.md)
+
++ [适配器模式]()
+
++ [享元模式]()
