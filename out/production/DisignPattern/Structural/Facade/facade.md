@@ -8,6 +8,7 @@
 
 + 构建多层系统结构，利用外观对象作为每层的入口，简化层间调用
 
++ Web应用的Controller层其实就是一个外观模式
 
 ## 优点
 
@@ -39,5 +40,13 @@
 
 外观模式通过抽象工厂来获得子系统的实例
 
+### 在源码中体现
++ Spring框架中的`ApplicationContext`类完成了
+    + 读取配置信息
+    + 将Bean注册到Factory
+    + ...
++ Spring的JDBCUtils类
++ MyBatis的Configuration类
++ Tomcat的RequestFacade其实现了HttpServletRequest等等
 
 
