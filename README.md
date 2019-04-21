@@ -23,6 +23,10 @@
 
 + [装饰者模式](/src/Structural/Decorator/Decorater.md)
 
-+ [适配器模式]()
++ [适配器模式](/src/Structural/Adapter/Adapter.md)
 
-+ [享元模式]()
++ [享元模式](/src/Structural/flyweight/FlyWeight.md)
+
++ [组合模式](/src/Structural/Composite/Componsite.md)
+
++ [桥接模式](/src/Structural/Bridge/Bridge.md)
