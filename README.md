@@ -21,12 +21,16 @@
 
 + [外观模式/门面模式(Facade)](/src/Structural/Facade/facade.md)
 
-+ [装饰者模式](/src/Structural/Decorator/Decorater.md)
++ [装饰者模式(Decorator)](/src/Structural/Decorator/Decorater.md)
 
-+ [适配器模式](/src/Structural/Adapter/Adapter.md)
++ [适配器模式(Adapter)](/src/Structural/Adapter/Adapter.md)
 
-+ [享元模式](/src/Structural/flyweight/FlyWeight.md)
++ [享元模式(FlyWeight)](/src/Structural/flyweight/FlyWeight.md)
 
-+ [组合模式](/src/Structural/Composite/Componsite.md)
++ [组合模式(Composite)](/src/Structural/Composite/Componsite.md)
 
-+ [桥接模式](/src/Structural/Bridge/Bridge.md)
++ [桥接模式(Bridge)](/src/Structural/Bridge/Bridge.md)
+
++ [代理模式(Proxy)](/src/Structural/Proxy/Proxy.md)
+
++ [模板方法模式(Template Method)]()
