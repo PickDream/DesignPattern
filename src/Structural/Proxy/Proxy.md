@@ -34,4 +34,21 @@
     + 装饰者模式是为对象加上行为
     + 代理模式是控制访问
 + 适配器模式
-    + 改变接口
+    + 改变接口的表现
+    
+## 静态代理案例
+针对Order实体，有对应的Dao层`IOrderDao`其对应的实现是`OrderDaoImpl`,Service层`IOrderService`实现类是`OrderServiceImpl`,现在要代理类完成的需求是
+实现分库，简单起见，使用Order的id取模，将记录传入到不同的库中，为了实现这样一个功能，可以使用代理，这个代理封装了具体的实现。下面是分库的具体实现
++ 分库必然需要多个数据源，那么需要能决定分到具体数据源的抽象层，其必然维护相关的数据源，这个抽象层就是`AbstractRoutingDataSource`
++ 分库逻辑决定了将数据分配到哪里，如果通过直接传参的方式和数据源耦合过密，所以使用ThreadLocal来作为约定传递
+## 静态代理UML
+![Static Proxy](1.png)
+
+## JDK动态代理的相关内容
++ 首先要想使用JDK动态代理，需要做两件事情：
+    1. 代理类实现`InvocationHandler`接口，该接口只有一个`public Object invoke(Object proxy, Method method, Object[] args)`方法
+        1. invoke函数的第一个参数是生成的代理类对象（JDK生成），第二个是Method，第三个是方法传入的参数
+    1. 使用Proxy 静态方法来获取生成的代理类
+## 在源码中的体现
++ Spring中的`JdkDynamicAopProxy`以及`CglibAopProxy`
++ MyBatis 的`MapperRegistry`中的`getMapper（Class<?> clazz）`
