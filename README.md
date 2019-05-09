@@ -33,6 +33,8 @@
 
 + [代理模式(Proxy)](/src/Structural/Proxy/Proxy.md)
 
-+ [模板方法模式(Template Method)]()
+## 行为型设计模式
+
++ [模板方法模式(Template Method)](/Behavioral/Template/Template.md)
 
 + [迭代器模式(Iterator)]()
