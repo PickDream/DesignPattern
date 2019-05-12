@@ -35,6 +35,14 @@
 
 ## 行为型设计模式
 
-+ [模板方法模式(Template Method)](/Behavioral/Template/Template.md)
++ [模板方法模式(Template Method)](/src/Behavioral/TemplateMethod/Template.md)
 
-+ [迭代器模式(Iterator)]()
++ [迭代器模式(Iterator)](/src/Behavioral/Iterator/Iterator.md)
+
++ [策略模式(Strategy)](/src/Behavioral/Strategy/Strategy.md)
+
++ [解释器模式(Interpreter)](/src/Behavioral/Interpreter/Interpreter.md) 
+
++ [观察者模式(Observer)](/src/Behavioral/Observer/Observe.md)
+
++ [责任链模式(Chain of Responsibility)](/src/Behavioral/ChainOfResponsibility/ChainOfResponsibility.md)
